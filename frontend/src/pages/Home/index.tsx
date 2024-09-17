@@ -1,10 +1,13 @@
 // add necessary types
 
+import Header from "../../components/Header";
+
 const Home: React.FC = () => {
     return (
-        <div>
+        <>
+            <Header />
             <h1>Home</h1>
-        </div>
+        </>
     )
 }
 
