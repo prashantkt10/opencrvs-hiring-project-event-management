@@ -2,6 +2,7 @@ import cors from "cors";
 import express, { type Express } from "express";
 import helmet from "helmet";
 import { pino } from "pino";
+import cookieParser from "cookie-parser";
 
 import { setupMongoose } from "@/common/utils/mongoose";
 import { openAPIRouter } from "@/api-docs/openAPIRouter";
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }));
 app.use(helmet());
 app.use(rateLimiter);
+app.use(cookieParser());
 
 // Request logging
 app.use(requestLogger);

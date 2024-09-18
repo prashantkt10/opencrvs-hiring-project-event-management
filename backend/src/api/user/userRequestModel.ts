@@ -10,7 +10,8 @@ export const UserSchema = z.object({
   name: z.string(),
   email: z.string().email(),
   password: z.string().min(8).max(16),
-  age: z.number()
+  age: z.number().optional(),
+  token: z.string().optional()
 });
 
 export const CreateUserSchema = z.object({
